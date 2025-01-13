@@ -9,8 +9,9 @@ import base58 from "bs58";
 import * as readline from 'readline';
 import * as fs from 'fs';
 import OpenAI from 'openai';
+import dotenv from 'dotenv';
 
-require("dotenv").config();
+dotenv.config();
 
 const connection = new Connection(process.env.SOLANA_RPC_URL as string);
 const keypair = Keypair.fromSecretKey(base58.decode(process.env.SOLANA_PRIVATE_KEY as string));

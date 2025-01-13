@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "@ai-sdk/openai": "^1.0.11",
     "@goat-sdk/adapter-vercel-ai": "^0.2.2",
@@ -12,11 +13,13 @@
     "openai": "^4.77.0"
   },
   "devDependencies": {
-    "@types/node": "^22.10.2"
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.0.0"
   },
   "scripts": {
-    "start": "ts-node --esm --transpileOnly index.ts",
+    "start": "node --loader ts-node/esm index.ts",
     "build": "tsc",
-    "dev": "ts-node-dev --respawn index.ts"
+    "dev": "node --loader ts-node/esm --watch index.ts"
   }
 }
